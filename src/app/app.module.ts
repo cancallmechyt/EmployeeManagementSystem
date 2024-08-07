@@ -1,9 +1,5 @@
 import { NgModule } from '@angular/core';
-import {
-  BrowserModule,
-  provideClientHydration,
-} from '@angular/platform-browser';
-
+import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -20,6 +16,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'; // นำเข้า HttpClientModule
 
 @NgModule({
   declarations: [
@@ -31,6 +29,8 @@ import { MatButtonModule } from '@angular/material/button';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    HttpClientModule, // ใช้ HttpClientModule แทน HttpClient
     MatToolbarModule,
     MatGridListModule,
     MatFormFieldModule,
