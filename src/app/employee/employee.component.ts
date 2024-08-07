@@ -7,7 +7,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-employee',
   templateUrl: './employee.component.html',
-  styleUrls: ['./employee.component.css'] // Changed styleUrl to styleUrls
+  styleUrls: ['./employee.component.css'] 
 })
 export class EmployeeComponent implements OnInit {
 
@@ -23,7 +23,7 @@ export class EmployeeComponent implements OnInit {
 
   skills: string[] = [];
 
-  constructor(private employeeService: EmployeeService) { // Corrected typo: emplyeeService to employeeService
+  constructor(private employeeService: EmployeeService) { 
   }
 
   ngOnInit(): void {
