@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import {
+  BrowserModule,
+  provideClientHydration,
+} from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -17,7 +20,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'; // นำเข้า HttpClientModule
+import { HttpClientModule } from '@angular/common/http';
+import { EmployeeListComponent } from './employee-list/employee-list.component'; // นำเข้า HttpClientModule
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -25,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http'; // นำเข้า H
     HeaderComponent,
     HomeComponent,
     EmployeeComponent,
+    EmployeeListComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +47,7 @@ import { HttpClientModule } from '@angular/common/http'; // นำเข้า H
     MatCheckboxModule,
     MatDividerModule,
     MatButtonModule,
+    MatTableModule,
   ],
   providers: [provideClientHydration(), provideAnimationsAsync()],
   bootstrap: [AppComponent],

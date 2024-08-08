@@ -1,34 +1,61 @@
 <div class="container">
+  <div class="btn-employee-list">
+    <button mat-flat-button routerLink="/employee-list">Employee List</button>
+  </div>
+
   <div class="card p-4 mt-4">
     <form #employeeForm="ngForm" (ngSubmit)="saveEmployee(employeeForm)">
       <mat-form-field appearance="outline">
         <mat-label>Employee Id</mat-label>
-        <input matInput placeholder="Employee Id" name="employeeId" [(ngModel)]="employee.employeeId" disabled/>
+        <input
+          matInput
+          placeholder="Employee Id"
+          name="employeeId"
+          [(ngModel)]="employee.employeeId"
+          disabled
+        />
         <mat-icon matSuffix>key_vertical</mat-icon>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>Employee Name</mat-label>
-        <input matInput placeholder="Employee Name" name="employeeName" [(ngModel)]="employee.employeeName" />
+        <input
+          matInput
+          placeholder="Employee Name"
+          name="employeeName"
+          [(ngModel)]="employee.employeeName"
+        />
         <mat-icon matSuffix>person</mat-icon>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>Conctact Number</mat-label>
-        <input matInput placeholder="Placeholder" name="employeeContactNumber" [(ngModel)]="employee.employeeContactNumber"/>
+        <input
+          matInput
+          placeholder="Placeholder"
+          name="employeeContactNumber"
+          [(ngModel)]="employee.employeeContactNumber"
+        />
         <mat-icon matSuffix>call</mat-icon>
-        <mat-hint>Hint</mat-hint>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>Address</mat-label>
-        <input matInput placeholder="Placeholder" name="employeeAddress" [(ngModel)]="employee.employeeAddress"/>
+        <input
+          matInput
+          placeholder="Placeholder"
+          name="employeeAddress"
+          [(ngModel)]="employee.employeeAddress"
+        />
         <mat-icon matSuffix>apartment</mat-icon>
       </mat-form-field>
 
       <mat-form-field>
         <mat-label>Choose your department</mat-label>
-        <mat-select name="employeeDepartment" [(ngModel)]="employee.employeeDepartment">
+        <mat-select
+          name="employeeDepartment"
+          [(ngModel)]="employee.employeeDepartment"
+        >
           <mat-option value="IT">IT</mat-option>
           <mat-option value="Network">Network</mat-option>
           <mat-option value="Repair">Repair</mat-option>
@@ -38,25 +65,61 @@
       <div>
         <label>Gender</label>
         <mat-radio-group aria-label="Select an option">
-          <mat-radio-button (click)="selectGender('Male')" value="Male">Male</mat-radio-button>
-          <mat-radio-button (click)="selectGender('Female')" value="Female">Female</mat-radio-button>
-          <mat-radio-button (click)="selectGender('Other')" value="Other">Other</mat-radio-button>
+          <mat-radio-button [checked]="checkGender('Male')" (click)="selectGender('Male')" value="Male"
+            >Male</mat-radio-button
+          >
+          <mat-radio-button [checked]="checkGender('Female')" (click)="selectGender('Female')" value="Female"
+            >Female</mat-radio-button
+          >
+          <mat-radio-button [checked]="checkGender('Other')" (click)="selectGender('Other')" value="Other"
+            >Other</mat-radio-button
+          >
         </mat-radio-group>
       </div>
 
       <mat-form-field appearance="outline" class="mt-2">
         <mat-label>Employee Skill</mat-label>
-        <input matInput placeholder="Employee Skill" name="employeeSkills" [(ngModel)]="employee.employeeSkills" disabled/>
+        <input
+          matInput
+          placeholder="Employee Skill"
+          name="employeeSkills"
+          [(ngModel)]="employee.employeeSkills"
+          disabled
+        />
         <mat-icon matSuffix>menu_book</mat-icon>
       </mat-form-field>
 
       <div>
         <label>Skills</label>
         <section class="example-section">
-          <mat-checkbox (change)="onSkillsChanges($event)" value="Java" class="example-margin">Java</mat-checkbox>
-          <mat-checkbox (change)="onSkillsChanges($event)" value="Angular" class="example-margin">Angular</mat-checkbox>
-          <mat-checkbox (change)="onSkillsChanges($event)" value="Reacct" class="example-margin">React</mat-checkbox>
-          <mat-checkbox (change)="onSkillsChanges($event)" value="Python" class="example-margin">Python</mat-checkbox>
+          <mat-checkbox
+            (change)="onSkillsChanges($event)"
+            value="Java"
+            class="example-margin"
+            [checked]="checkSkills('Java')"
+            >Java</mat-checkbox
+          >
+          <mat-checkbox
+            (change)="onSkillsChanges($event)"
+            value="Angular"
+            class="example-margin"
+            [checked]="checkSkills('Angular')"
+            >Angular</mat-checkbox
+          >
+          <mat-checkbox
+            (change)="onSkillsChanges($event)"
+            value="React"
+            class="example-margin"
+            [checked]="checkSkills('React')"
+            >React</mat-checkbox
+          >
+          <mat-checkbox
+            (change)="onSkillsChanges($event)"
+            value="Python"
+            class="example-margin"
+            [checked]="checkSkills('Python')"
+            >Python</mat-checkbox
+          >
         </section>
       </div>
 

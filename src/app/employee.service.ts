@@ -15,4 +15,20 @@ export class EmployeeService {
   public saveEmployee(employee: Employee): Observable<Employee>{
     return this.httpClient.post<Employee>(`${this.api}/save/employee`, employee)
   }
+
+  public getEmployee(): Observable<Employee[]>{
+    return this.httpClient.get<Employee[]>(`${this.api}/get/employee`)
+  }
+
+  public deleteEmployee(employeeId: number){
+    return this.httpClient.delete(`${this.api}/delete/employee/${employeeId}`);
+  }
+
+  public getSingleEmployee(employeeId: number){
+    return this.httpClient.get<Employee>(`${this.api}/get/employee/${employeeId}`);
+  }
+
+  public updateEmployee(employee: Employee){
+    return this.httpClient.put<Employee>(`${this.api}/update/employee`, employee);
+  }
 }
